@@ -15,7 +15,7 @@ class StringUtilsTest {
             "'a', 'a'",
             "'ab', 'ba'",
             "'Hello', 'olleH'",
-            "'Готово', 'овотоГ'"  // просто демонстрация работы с Юникодом
+            "'Готово', 'овотоГ'"  // Unicode is ok
     })
     void reverse_basicCases(String input, String expected) {
         assertEquals(expected, StringUtils.reverse(input));
@@ -23,7 +23,7 @@ class StringUtilsTest {
 
     @Test
     void reverse_handlesUnicodeEmoji() {
-        // Для суррогатных пар тоже должно работать
+        // Emoties are ok
         assertEquals("👋🙂", StringUtils.reverse("🙂👋"));
     }
 
