@@ -15,7 +15,7 @@ class StringUtilsTest {
             "'a', 'a'",
             "'ab', 'ba'",
             "'Hello', 'olleH'",
-            "'Готово', 'овотоГ'"  // Unicode is ok
+            "'Готово', 'овотоГ'"  // Unicode is okkk
     })
     void reverse_basicCases(String input, String expected) {
         assertEquals(expected, StringUtils.reverse(input));
