@@ -23,7 +23,7 @@ class StringUtilsTest {
 
     @Test
     void reverse_handlesUnicodeEmoji() {
-        // Emoties are ok
+        // Emoties are okay
         assertEquals("👋🙂", StringUtils.reverse("🙂👋"));
     }
 
