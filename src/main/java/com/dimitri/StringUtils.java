@@ -4,9 +4,8 @@ public final class StringUtils {
     private StringUtils() { }
 
     /**
-     * reverse(null) -> null
-     * reverse("") -> ""
-     * reverse("abc") -> "cba"
+     * String reverser.
+     * reverse(null) -> null; reverse("") -> ""; reverse("abc") -> "cba"
      */
     public static String reverse(String s) {
         if (s == null) return null;
@@ -14,17 +13,17 @@ public final class StringUtils {
     }
 
     /**
-     * Палиндром: сравнение без пробелов, без учёта регистра.
+     * Palindrome: compare ignoring spaces and case.
      * null -> false; "" -> true
      */
     public static boolean isPalindrome(String s) {
         if (s == null) return false;
-        String normalized = s.replaceAll("\\s+", "").toLowerCase();
+        String normalized = s.replaceAll("\\s+", "").toLowerCase(); // normalization: removes all whitespace with regex (spaces, tabs, newlines), makes all letters lowercase
         return new StringBuilder(normalized).reverse().toString().equals(normalized);
     }
 
     /**
-     * Делает первый символ строки заглавным, остальные не трогаем.
+     * Make the first letter capitalized.
      * null -> null; "" -> ""; "hello" -> "Hello"; "1abc" -> "1abc"
      */
     public static String capitalize(String s) {
@@ -34,7 +33,9 @@ public final class StringUtils {
     }
 
     /**
-     * Считает гласные a/e/i/o/u (оба регистра). Для null или "" -> 0.
+     * null -> 0
+     * "" -> 0
+     * Count vowels a/e/i/o/u
      */
     public static int countVowels(String s) {
         if (s == null || s.isEmpty()) return 0;
