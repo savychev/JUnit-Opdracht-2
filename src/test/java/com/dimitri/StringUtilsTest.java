@@ -32,8 +32,8 @@ class StringUtilsTest {
         assertNull(StringUtils.reverse(input));
     }
 
-    @org.junit.jupiter.params.ParameterizedTest
-    @org.junit.jupiter.params.provider.CsvSource({
+    @ParameterizedTest
+    @CsvSource({
             "'', true",
             "'a', true",
             "'aa', true",
@@ -48,13 +48,13 @@ class StringUtilsTest {
         assertEquals(expected, StringUtils.isPalindrome(input));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isPalindrome_null_isFalse() {
-        org.junit.jupiter.api.Assertions.assertFalse(StringUtils.isPalindrome(null));
+        assertFalse(StringUtils.isPalindrome(null));
     }
 
-    @org.junit.jupiter.params.ParameterizedTest
-    @org.junit.jupiter.params.provider.CsvSource({
+    @ParameterizedTest
+    @CsvSource({
             "'', ''",
             "'a', 'A'",
             "'hello', 'Hello'",
@@ -63,16 +63,16 @@ class StringUtilsTest {
             "'äbc', 'Äbc'"
     })
     void capitalize_basic(String input, String expected) {
-        org.junit.jupiter.api.Assertions.assertEquals(expected, StringUtils.capitalize(input));
+        assertEquals(expected, StringUtils.capitalize(input));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void capitalize_null_isNull() {
-        org.junit.jupiter.api.Assertions.assertNull(StringUtils.capitalize(null));
+        assertNull(StringUtils.capitalize(null));
     }
 
-    @org.junit.jupiter.params.ParameterizedTest
-    @org.junit.jupiter.params.provider.CsvSource({
+    @ParameterizedTest
+    @CsvSource({
             "'', 0",
             "'bcd', 0",
             "'a', 1",
@@ -83,12 +83,12 @@ class StringUtilsTest {
             "'rhythm', 0"
     })
     void countVowels_basic(String input, int expected) {
-        org.junit.jupiter.api.Assertions.assertEquals(expected, StringUtils.countVowels(input));
+        assertEquals(expected, StringUtils.countVowels(input));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void countVowels_null_isZero() {
-        org.junit.jupiter.api.Assertions.assertEquals(0, StringUtils.countVowels(null));
+        assertEquals(0, StringUtils.countVowels(null));
     }
 
 }
